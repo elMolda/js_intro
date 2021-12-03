@@ -49,3 +49,16 @@ function computeCircleArea() {
   alert(circleArea(circleRadius));
   return circleArea(circleRadius);
 }
+
+//isosceles triangle
+function isoscelesHeight(side1, side2, base) {
+  const validateIsosceles = (side1, side2, base) =>
+    side1 == side2 && side1 * 2 > base;
+  if (validateIsosceles(side1, side2, base)) {
+    const height = Math.sqrt(Math.pow(side1, 2) - Math.pow(base, 2) / 4);
+    console.log(height);
+    return height;
+  } else {
+    console.log("Not isosceles");
+  }
+}
