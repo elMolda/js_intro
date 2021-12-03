@@ -7,7 +7,40 @@
     <title>Figures</title>
 </head>
 <body>
-    <h1>Geo figures</h1>
+    <header>
+        <h1>Geo figures</h1>
+        <p>Calculator of areas and perimeters of geometric figures</p>
+    </header>
+    <section>
+        <h2>Square</h2>
+        <form action="">
+            <label for="squareInput">Enter Square side length</label>
+            <input id="squareInput" type="number"/>
+            <button type="button" onclick="computeSquarePerimeter()">Compute perimeter</button>
+            <button type="button" onclick="computeSquareArea()">Compute area</button>
+        </form>
+    </section>
+    <section>
+        <h2>Triangle</h2>
+        <form action="">
+            <label for="triangleInput">Enter Triangle sides length</label>
+            <input id="triangleSide1" type="number"/>
+            <input id="triangleSide2" type="number"/>
+            <input id="triangleBase" type="number"/>
+            <input id="triangleHeight" type="number"/>
+            <button type="button" onclick="computeTrianglePerimeter()">Compute perimeter</button>
+            <button type="button" onclick="computeTriangleArea()">Compute area</button>
+        </form>
+    </section>
+    <section>
+        <h2>Circle</h2>
+        <form action="">
+            <label for="circleInput">Enter circle radius</label>
+            <input id="circleRadius" type="number"/>
+            <button type="button" onclick="computeCircumference()">Compute circumference</button>
+            <button type="button" onclick="computeCircleArea()">Compute Area</button>
+        </form>
+    </section>
     <script src="./figures.js"></script>
 </body>
 </html>
