@@ -1,0 +1,1 @@
+const colombia_salaries = colombia.map((person) => person.salary);
