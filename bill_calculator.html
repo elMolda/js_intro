@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill calculator</title>
+</head>
+<body>
+    <h1>Bill Calculator</h1>
+    <p>Insert items to the bill</p>
+    <form action="">
+        <label for="nameInput">Enter item name</label>
+        <input id="nameInput" type="text">
+        <label for="priceInput">Enter item price</label>
+        <input id="priceInput" type="number">
+        <button type="button" onclick="insertBillItem()">Add item</button>
+    </form>
+    <table id="billTable">
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+    </table>
+    <form action="">
+        <label for="discountInput">Enter a discount percentage</label>
+        <input id="discountInput" type="number">
+        <button type="button" onclick="writeDiscount()">Add discount</button>
+    </form>
+    <form action="">
+        <label for="taxInput">Enter tax percentage</label>
+        <input id="taxInput" type="number">
+        <button type="button" onclick="writeTax()">Add tax</button>
+    </form>
+    <button type="button" onclick="calculateBill()">Calculate bill</button>
+    <h4 id="billTitle"></h4>
+    <table id="totalTable"></table>
+   <script src="./bill_calculator.js"></script> 
+</body>
+</html>

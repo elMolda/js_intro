@@ -1,12 +1,6 @@
 const salaries = [900, 100, 300, 100, 700, 200, 400];
 
 function average(list) {
-  //let accumulate = 0;
-  //for (let i = 0; i < list.length; i++) {
-  //   accumulate = accumulate + list[i]
-  //}
-  //const avg = accumulate / list.length
-  //return avg
   const accumulate = list.reduce(function (accum = 0, element) {
     return accum + element;
   });
