@@ -12,17 +12,12 @@ function insertBillItem() {
   insertTableRow("billTable", [itemName, itemPrice]);
 }
 
-let discount_percentage = 0;
-let tax_percentage = 0;
+let discountPercentage = 0;
+let taxPercentage = 0;
 
-function writeDiscount() {
-  const discountValue = document.getElementById("discountInput").value;
-  discount_percentage = discountValue;
-}
-
-function writeTax() {
-  const taxValue = document.getElementById("taxInput").value;
-  tax_percentage = taxValue;
+function addDiscountAndTaxes() {
+  discountPercentage = document.getElementById("discountInput").value;
+  taxPercentage = document.getElementById("taxInput").value;
 }
 
 function calculateBill() {
@@ -37,14 +32,14 @@ function calculateBill() {
     }
   }
   insertTableRow("totalTable", ["Subtotal", subTotal]);
-  const taxValue = subTotal * (tax_percentage / 100);
-  const discountValue = subTotal * (discount_percentage / 100);
+  const taxValue = subTotal * (taxPercentage / 100);
+  const discountValue = subTotal * (discountPercentage / 100);
   const calculateDiscountPrice = (price, discount) =>
     (price * (100 - discount)) / 100;
   subTotal = subTotal + taxValue;
-  const total = calculateDiscountPrice(subTotal, discount_percentage);
+  const total = calculateDiscountPrice(subTotal, discountPercentage);
   var billTitle = document.getElementById("billTitle");
-  billTitle.innerHTML = "Bill";
+  billTitle.innerHTML = "Here is your Bill";
   insertTableRow("totalTable", ["Tax Value", taxValue]);
   insertTableRow("totalTable", ["Discount Value", discountValue]);
   insertTableRow("totalTable", ["Grand Total", total]);

@@ -1,40 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bill calculator</title>
-</head>
-<body>
-    <h1>Bill Calculator</h1>
-    <p>Insert items to the bill</p>
-    <form action="">
-        <label for="nameInput">Enter item name</label>
-        <input id="nameInput" type="text">
-        <label for="priceInput">Enter item price</label>
-        <input id="priceInput" type="number">
-        <button type="button" onclick="insertBillItem()">Add item</button>
-    </form>
-    <table id="billTable">
-        <tr>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Bill Calculator</h1>
+      <p>Insert items to the bill</p>
+      <form action="">
+        <div class="mb-3 mt-3">
+          <label for="nameInput">Enter item name</label>
+          <input id="nameInput" type="text" class="form-control" />
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="priceInput">Enter item price</label>
+          <input id="priceInput" type="number" class="form-control" />
+        </div>
+        <div class="d-grid">
+          <button
+            type="button"
+            onclick="insertBillItem()"
+            class="btn btn-primary"
+          >
+            Add item
+          </button>
+        </div>
+      </form>
+      <br />
+      <br />
+      <table id="billTable" class="table">
+        <thead>
+          <tr class="table-dark">
             <th>Item</th>
             <th>Price</th>
-        </tr>
-    </table>
-    <form action="">
-        <label for="discountInput">Enter a discount percentage</label>
-        <input id="discountInput" type="number">
-        <button type="button" onclick="writeDiscount()">Add discount</button>
-    </form>
-    <form action="">
-        <label for="taxInput">Enter tax percentage</label>
-        <input id="taxInput" type="number">
-        <button type="button" onclick="writeTax()">Add tax</button>
-    </form>
-    <button type="button" onclick="calculateBill()">Calculate bill</button>
-    <h4 id="billTitle"></h4>
-    <table id="totalTable"></table>
-   <script src="./bill_calculator.js"></script> 
-</body>
+          </tr>
+        </thead>
+      </table>
+      <br /><br />
+      <form action="">
+        <div class="mb-3 mt-3">
+          <label for="discountInput">Enter a discount percentage</label>
+          <input id="discountInput" type="number" class="form-control"/>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="taxInput">Enter tax percentage</label>
+          <input id="taxInput" type="number" class="form-control"/>
+        </div>
+        <div class="d-grid">
+          <button
+            type="button"
+            onclick="addDiscountAndTaxes()"
+            class="btn btn-secondary"
+          >
+            Add discount and taxes
+          </button>
+        </div>
+      </form>
+      <br />
+      <div class="d-grid">
+        <button type="button" onclick="calculateBill()" class="btn btn-success">
+          Calculate bill
+        </button>
+      </div>
+      <br /><br />
+      <h3 id="billTitle" class="text-center"></h4>
+      <table id="totalTable" class="table table-striped"></table>
+    </div>
+    <script src="./bill_calculator.js"></script>
+  </body>
 </html>
